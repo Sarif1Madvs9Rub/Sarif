@@ -38,7 +38,7 @@ function showToast(message, type = 'info') {
 
 // التحقق من حالة تسجيل الدخول وإظهار/إخفاء العناصر المناسبة
 function checkAuthState() {
-    const isLoggedIn = true; // تعيين حالة تسجيل الدخول إلى true دائماً
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // التحقق من حالة تسجيل الدخول من localStorage
     const authContainer = document.querySelector('.auth-container');
     const mainContainer = document.querySelector('.main-container');
     const topNav = document.querySelector('.top-nav');
@@ -57,7 +57,7 @@ function checkAuthState() {
         if (authContainer) authContainer.style.display = 'block';
         if (mainContainer) mainContainer.style.display = 'none';
         if (topNav) topNav.style.display = 'none';
-        showSignup(); // إظهار قسم التسجيل افتراضياً
+        showLogin(); // إظهار نموذج تسجيل الدخول
     }
 }
 
@@ -919,46 +919,33 @@ function handleSignup(event) {
 function handleLogin(event) {
     event.preventDefault();
     
-    const name = document.getElementById('login-name').value;
+    const fullName = document.getElementById('login-name').value;
     const password = document.getElementById('login-password').value;
 
-    // الحصول على قائمة المستخدمين
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    
-    // البحث عن المستخدم
-    const user = users.find(u => u.name === name && u.password === password);
-
-    if (user) {
-        localStorage.setItem('currentUser', name);
+    // هنا يمكنك إضافة التحقق من صحة البيانات
+    if (fullName && password) {
+        // تعيين حالة تسجيل الدخول في localStorage
         localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userFullName', fullName);
+        
+        // تحديث حالة المصادقة وإظهار المحتوى الرئيسي
         checkAuthState();
-        showToast('تم تسجيل الدخول بنجاح', 'success');
+        showToast('تم تسجيل الدخول بنجاح!', 'success');
     } else {
-        showToast('اسم المستخدم أو كلمة المرور غير صحيحة', 'error');
+        showToast('الرجاء إدخال جميع البيانات المطلوبة', 'error');
     }
 }
 
 // تسجيل الخروج
 function logout() {
-    // إزالة بيانات المستخدم من التخزين المحلي
+    // إزالة بيانات المستخدم من localStorage
+    localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('currentUser');
-    localStorage.setItem('isLoggedIn', 'false');
     
-    // إخفاء المحتوى الرئيسي وإظهار قسم المصادقة
-    const authContainer = document.querySelector('.auth-container');
-    const mainContainer = document.querySelector('.main-container');
-    const topNav = document.querySelector('.top-nav');
+    // تحديث حالة المصادقة
+    checkAuthState();
     
-    if (authContainer) authContainer.style.display = 'block';
-    if (mainContainer) mainContainer.style.display = 'none';
-    if (topNav) topNav.style.display = 'none';
-    
-    // إظهار قسم تسجيل الدخول
-    showLogin();
-    
-    // إعادة تعيين التاريخ
-    navigationHistory = ['converter-section'];
-    
+    // إظهار رسالة نجاح
     showToast('تم تسجيل الخروج بنجاح', 'success');
 }
 
@@ -1104,15 +1091,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
     checkAuthState();
     
-    // إضافة مستمعات الأحداث لنماذج تسجيل الدخول والتسجيل
-    const signupForm = document.getElementById('signup-form');
-    if (signupForm) {
-        signupForm.addEventListener('submit', handleSignup);
-    }
-    
+    // إضافة مستمع الأحداث لنماذج تسجيل الدخول والتسجيل
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);
+    }
+    
+    const signupForm = document.getElementById('signup-form');
+    if (signupForm) {
+        signupForm.addEventListener('submit', handleSignup);
     }
     
     // إضافة مستمع الأحداث لزر تسجيل الخروج
