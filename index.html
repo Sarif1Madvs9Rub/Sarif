@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARIF - محول العملات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="auth-page">
+    <!-- قسم المصادقة -->
+    <div id="auth-container" class="auth-container">
+        <!-- قسم التسجيل -->
+        <div id="signup-section" class="section auth-section">
+            <div class="logo">SARIF</div>
+            <h1 data-translate="createAccount">إنشاء حساب جديد</h1>
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showSignup()" data-translate="createAccount">إنشاء حساب جديد</button>
+                <button class="tab-btn" onclick="showLogin()" data-translate="login">تسجيل الدخول</button>
+            </div>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name" data-translate="fullName">الاسم الكامل:</label>
+                    <input type="text" id="signup-name" class="text-input" data-translate-placeholder="enterFullName" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email" data-translate="email">البريد الإلكتروني:</label>
+                    <input type="email" id="signup-email" class="text-input" data-translate-placeholder="enterEmail" placeholder="أدخل بريدك الإلكتروني" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-phone" data-translate="phone">رقم الهاتف:</label>
+                    <input type="tel" id="signup-phone" class="text-input" data-translate-placeholder="enterPhone" placeholder="أدخل رقم هاتفك" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password" data-translate="password">كلمة المرور:</label>
+                    <input type="password" id="signup-password" class="text-input" data-translate-placeholder="enterPassword" placeholder="أدخل كلمة المرور" minlength="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password" data-translate="confirmPassword">تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirm-password" class="text-input" data-translate-placeholder="confirmPasswordPlaceholder" placeholder="أعد إدخال كلمة المرور" minlength="6" required>
+                </div>
+                <button type="submit" class="submit-btn" data-translate="signUp">تسجيل الاشتراك</button>
+            </form>
+        </div>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="login-section" class="section auth-section">
+            <div class="logo">SARIF</div>
+            <h1 data-translate="login">تسجيل الدخول</h1>
+            <div class="auth-tabs">
+                <button class="tab-btn" onclick="showSignup()" data-translate="createAccount">إنشاء حساب جديد</button>
+                <button class="tab-btn active" onclick="showLogin()" data-translate="login">تسجيل الدخول</button>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-name" data-translate="fullName">الاسم الكامل:</label>
+                    <input type="text" id="login-name" class="text-input" data-translate-placeholder="enterFullName" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password" data-translate="password">كلمة المرور:</label>
+                    <input type="password" id="login-password" class="text-input" data-translate-placeholder="enterPassword" placeholder="أدخل كلمة المرور" required>
+                </div>
+                <button type="submit" class="submit-btn" data-translate="login">تسجيل الدخول</button>
+                <p class="switch-auth"><span data-translate="noAccount">ليس لديك حساب؟</span> <a href="#" onclick="showSignup()" data-translate="createAccount">إنشاء حساب جديد</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div id="main-container" class="main-container">
+        <nav class="top-nav">
+            <div class="nav-group">
+                <div class="nav-left">
+                    <a href="https://wa.me/212659661716" target="_blank" class="whatsapp-btn" title="تواصل معنا عبر واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-translate="contactUs" data-en="Contact Us" data-ar="تواصل معنا">تواصل معنا</span>
+                    </a>
+                    <button class="back-btn" onclick="goBack()">
+                        <i class="fas fa-arrow-right"></i> <span data-translate="back">رجوع</span>
+                    </button>
+                </div>
+                <button onclick="showStepsSection()" class="steps-btn" data-translate="stepsButton">الخطوات</button>
+                <div class="language-selector">
+                    <button id="current-lang" class="lang-btn" onclick="toggleLanguageDropdown()">
+                        <span class="lang-text">العربية</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="languageDropdown" class="language-dropdown">
+                        <a href="#" onclick="selectLanguage('ar')">العربية</a>
+                        <a href="#" onclick="selectLanguage('en')">English</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-group">
+                <button onclick="showProfileSection()" class="nav-btn profile-icon-btn" id="profile-btn">
+                    <svg width="32px" height="32px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" class="profile-icon">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <path d="M256,0 C397.384896,0 512,114.615104 512,256 C512,397.384896 397.384896,512 256,512 C114.615104,512 0,397.384896 0,256 C0,114.615104 114.615104,0 256,0 Z M256,128 C207.401472,128 168,167.401472 168,216 C168,264.598528 207.401472,304 256,304 C304.598528,304 344,264.598528 344,216 C344,167.401472 304.598528,128 256,128 Z M256,320 C192.980664,320 140,372.980664 140,436 C140,475.764502 171.235498,507 211,507 L301,507 C340.764502,507 372,475.764502 372,436 C372,372.980664 319.019336,320 256,320 Z" fill="currentColor"/>
+                    </g>
+                </svg>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <svg width="32px" height="32px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" class="logout-icon">
+                        <path d="M256,32 C385,32 480,150 480,256 C480,362 385,480 256,480 C127,480 32,362 32,256 C32,150 127,32 256,32 M256,160 L256,352" stroke="currentColor" stroke-width="64" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div class="container">
+            <!-- قسم التحويل -->
+            <div id="converter-section" class="section">
+                <h2 data-translate="converter">محول العملات</h2>
+                <div class="conversion-section">
+                    <div class="input-group">
+                        <label for="mad-amount" data-translate="moroccanDirham">درهم مغربي (MAD)</label>
+                        <input type="number" 
+                               id="mad-amount" 
+                               class="currency-input" 
+                               data-translate-placeholder="madInputPlaceholder" 
+                               placeholder="أدخل المبلغ بالدرهم المغربي">
+                    </div>
+                    <button class="convert-btn" onclick="convertCurrency()" data-translate="convert">تحويل</button>
+                    <div class="input-group">
+                        <label for="rub-amount" data-translate="russianRuble">روبل روسي (RUB)</label>
+                        <input type="number" 
+                               id="rub-amount" 
+                               class="currency-input" 
+                               data-translate-placeholder="rubInputPlaceholder" 
+                               placeholder="المبلغ بالروبل الروسي" 
+                               readonly>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الاتصال -->
+            <div id="contact-section" class="section">
+                <h2 data-translate="contactUs">اتصل بنا</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name" data-translate="name">الاسم:</label>
+                        <input type="text" id="contact-name" class="text-input" data-translate-placeholder="enterName" placeholder="أدخل اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone" data-translate="phone">رقم الهاتف:</label>
+                        <input type="tel" id="contact-phone" class="text-input" data-translate-placeholder="enterPhone" placeholder="أدخل رقم هاتفك" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message" data-translate="message">الرسالة:</label>
+                        <textarea id="contact-message" class="text-input" data-translate-placeholder="enterMessage" placeholder="اكتب رسالتك هنا" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-translate="send">إرسال</button>
+                </form>
+                <a href="https://wa.me/212659661716" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-translate="whatsApp">واتساب</span>
+                </a>
+            </div>
+
+            <!-- قسم الخطوات -->
+            <div id="steps-section" class="section">
+                <h2 data-translate="steps">الخطوات</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <h3 data-translate="step1">الخطوة الأولى: إرسال المبلغ بالدرهم المغربي</h3>
+                        <div class="sub-steps">
+                            <h4 data-translate="step1_1">1. اختيار وسيلة الدفع المناسبة:</h4>
+                            <ul>
+                                <li data-translate="step1_1_1">انتقل إلى قسم معلومات الدفع في التطبيق.</li>
+                                <li data-translate="step1_1_2">اعتمد وسيلة الدفع المتاحة (مثل CIHBANK).</li>
+                                <li data-translate="step1_1_3">استخدم المعلومات البنكية الخاصة بالتطبيق (الاسم، رقم الحساب، اسم البنك) لإجراء التحويل.</li>
+                            </ul>
+                            <h4 data-translate="step1_2">2. تنفيذ عملية الدفع:</h4>
+                            <ul>
+                                <li data-translate="step1_2_1">قم بإرسال المبلغ المطلوب بالدرهم المغربي من حسابك البنكي إلى الحساب المخصص في التطبيق.</li>
+                                <li data-translate="step1_2_2">تأكد من نجاح العملية من خلال تطبيق البنك الخاص بك.</li>
+                            </ul>
+                            <h4 data-translate="step1_3">3. التقاط لقطة شاشة:</h4>
+                            <ul>
+                                <li data-translate="step1_3_1">بعد تأكيد العملية، التقط لقطة شاشة تثبت نجاح الدفع، حيث ستكون ضرورية في الخطوة التالية.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <h3 data-translate="step2">الخطوة الثانية: تسجيل معلومات الحساب البنكي في روسيا</h3>
+                        <div class="sub-steps">
+                            <h4 data-translate="step2_1">1. انتقل إلى قسم معلومات الحساب البنكي:</h4>
+                            <ul>
+                                <li data-translate="step2_1_1">أدخل الاسم الكامل لصاحب الحساب في روسيا.</li>
+                                <li data-translate="step2_1_2">أدخل رقم هاتف صاحب الحساب.</li>
+                                <li data-translate="step2_1_3">أدخل اسم البنك المتواجد في روسيا.</li>
+                                <li data-translate="step2_1_4">أدخل رقم الحساب البنكي.</li>
+                            </ul>
+                            <h4 data-translate="step2_2">2. إرفاق إثبات الدفع:</h4>
+                            <ul>
+                                <li data-translate="step2_2_1">ارفع لقطة الشاشة التي التقطتها في الخطوة السابقة لتأكيد عملية الدفع.</li>
+                            </ul>
+                            <h4 data-translate="step2_3">3. تأكيد المعلومات:</h4>
+                            <ul>
+                                <li data-translate="step2_3_1">تحقق من أن جميع البيانات المدخلة صحيحة لتجنب أي تأخير في عملية تحويل الروبل.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <h3 data-translate="step3">الخطوة الثالثة: استلام عملة الروبل الروسي</h3>
+                        <p data-translate="step3_text">بعد مراجعة المعلومات من طرف التطبيق والتأكد من صحة العملية، سيتم تحويل المبلغ المتفق عليه إلى الحساب البنكي الروسي المدخل.</p>
+                        <p data-translate="step3_support">يمكنك متابعة حالة العملية عبر قسم المراسلة للتواصل مع الدعم عند الحاجة.</p>
+                    </div>
+
+                    <div class="important-tips">
+                        <h3 data-translate="important_tips">نصائح مهمة:</h3>
+                        <ul>
+                            <li data-translate="tip1">تأكد من إدخال معلومات دقيقة لتجنب أي تأخير.</li>
+                            <li data-translate="tip2">احتفظ بسجل معاملاتك بما في ذلك الإيصالات ولقطات الشاشة.</li>
+                            <li data-translate="tip3">عند مواجهة أي مشكلة، تواصل مع دعم التطبيق مباشرة عبر الواتساب.</li>
+                        </ul>
+                        <p data-translate="final_note">هذه الخطوات تضمن لك عملية صرف مريحة وآمنة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم الملف الشخصي -->
+            <div id="profile-section" class="section">
+                <h2 data-translate="profile">الملف الشخصي</h2>
+                <h3 data-translate="personalInfo">المعلومات الشخصية</h3>
+                <div class="profile-info">
+                    <div class="info-group">
+                        <div class="info-field">
+                            <label data-translate="fullName">الاسم:</label>
+                            <div id="profile-name" class="info-value"></div>
+                        </div>
+                        <button onclick="editProfileField('name')" class="edit-btn" data-translate="edit">تعديل</button>
+                    </div>
+                    <div class="info-group">
+                        <div class="info-field">
+                            <label data-translate="email">البريد الإلكتروني:</label>
+                            <div id="profile-email" class="info-value"></div>
+                        </div>
+                        <button onclick="editProfileField('email')" class="edit-btn" data-translate="edit">تعديل</button>
+                    </div>
+                    <div class="info-group">
+                        <div class="info-field">
+                            <label data-translate="phone">رقم الهاتف:</label>
+                            <div id="profile-phone" class="info-value"></div>
+                        </div>
+                        <button onclick="editProfileField('phone')" class="edit-btn" data-translate="edit">تعديل</button>
+                    </div>
+                    <div class="info-group">
+                        <div class="info-field">
+                            <label data-translate="accountNumber">رقم الحساب:</label>
+                            <div id="profile-account" class="info-value readonly"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button onclick="showChangePasswordForm()" class="action-btn change-password-btn" data-translate="changePassword">
+                        تغيير كلمة المرور
+                    </button>
+                </div>
+
+                <!-- نموذج تغيير كلمة المرور -->
+                <div id="change-password-modal" class="modal">
+                    <div class="modal-content">
+                        <h3 data-translate="changePassword">تغيير كلمة المرور</h3>
+                        <form id="change-password-form" onsubmit="handleChangePassword(event)">
+                            <div class="form-group">
+                                <label for="current-password" data-translate="currentPassword">كلمة المرور الحالية:</label>
+                                <input type="password" id="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password" data-translate="newPassword">كلمة المرور الجديدة:</label>
+                                <input type="password" id="new-password" required minlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-new-password" data-translate="confirmPassword">تأكيد كلمة المرور الجديدة:</label>
+                                <input type="password" id="confirm-new-password" required minlength="6">
+                            </div>
+                            <div class="modal-actions">
+                                <button type="submit" class="btn-primary" data-translate="save">حفظ</button>
+                                <button type="button" onclick="closeChangePasswordModal()" class="btn-secondary" data-translate="cancel">إلغاء</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم معلومات الدفع -->
+            <div id="payment-info" class="section main-section">
+                <h3 data-translate="paymentInfo">معلومات الدفع</h3>
+                
+                <!-- أزرار اختيار البنوك -->
+                <div class="bank-selector">
+                    <button class="bank-btn active" onclick="showBankInfo('cih')" data-translate="cihBank">CIH Bank</button>
+                    <button class="bank-btn" onclick="showBankInfo('attijari')" data-translate="attijariwafaBank">Attijariwafa Bank</button>
+                    <button class="bank-btn" onclick="showBankInfo('boa')" data-translate="bankOfAfrica">Bank of Africa</button>
+                </div>
+
+                <!-- معلومات CIH Bank -->
+                <div id="cih-bank-info" class="bank-info active">
+                    <div class="info-row">
+                        <span class="info-label" data-translate="bankName">اسم البنك:</span>
+                        <span class="info-value">CIH Bank</span>
+                        <button class="copy-btn" onclick="copyText('CIH Bank')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="fullName">الاسم الكامل:</span>
+                        <span class="info-value">Abdellah Arif</span>
+                        <button class="copy-btn" onclick="copyText('Abdellah Arif')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="accountNumber">رقم الحساب:</span>
+                        <span class="info-value">230010860054121102140096</span>
+                        <button class="copy-btn" onclick="copyText('230010860054121102140096')" data-translate="copy">نسخ</button>
+                    </div>
+                </div>
+
+                <!-- معلومات Attijariwafa Bank -->
+                <div id="attijari-bank-info" class="bank-info">
+                    <div class="info-row">
+                        <span class="info-label" data-translate="bankName">اسم البنك:</span>
+                        <span class="info-value">Attijariwafa Bank</span>
+                        <button class="copy-btn" onclick="copyText('Attijariwafa Bank')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="fullName">الاسم الكامل:</span>
+                        <span class="info-value">Abdellah Arif</span>
+                        <button class="copy-btn" onclick="copyText('Abdellah Arif')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="accountNumber">رقم الحساب:</span>
+                        <span class="info-value">231010860054121102140096</span>
+                        <button class="copy-btn" onclick="copyText('231010860054121102140096')" data-translate="copy">نسخ</button>
+                    </div>
+                </div>
+
+                <!-- معلومات Bank of Africa -->
+                <div id="boa-bank-info" class="bank-info">
+                    <div class="info-row">
+                        <span class="info-label" data-translate="bankName">اسم البنك:</span>
+                        <span class="info-value">Bank of Africa</span>
+                        <button class="copy-btn" onclick="copyText('Bank of Africa')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="fullName">الاسم الكامل:</span>
+                        <span class="info-value">Abdellah Arif</span>
+                        <button class="copy-btn" onclick="copyText('Abdellah Arif')" data-translate="copy">نسخ</button>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-translate="accountNumber">رقم الحساب:</span>
+                        <span class="info-value">232010860054121102140096</span>
+                        <button class="copy-btn" onclick="copyText('232010860054121102140096')" data-translate="copy">نسخ</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- قسم معلومات الحساب البنكي في روسيا -->
+            <div id="russian-bank-info" class="section main-section">
+                <h3 data-translate="russianBankInfo">معلومات الحساب البنكي في روسيا</h3>
+                <form id="russian-bank-form">
+                    <div class="input-group">
+                        <label for="recipient-name" data-translate="fullName">الاسم الكامل لصاحب الحساب :</label>
+                        <input type="text" 
+                               id="recipient-name" 
+                               class="text-input" 
+                               data-translate-placeholder="fullNamePlaceholder" 
+                               required>
+                    </div>
+                    <div class="input-group">
+                        <label for="recipient-phone" data-translate="phoneNumber">رقم الهاتف :</label>
+                        <input type="tel" 
+                               id="recipient-phone" 
+                               class="text-input" 
+                               data-translate-placeholder="phonePlaceholder" 
+                               required>
+                    </div>
+                    <div class="input-group">
+                        <label for="recipient-bank" data-translate="bankName">اسم البنك :</label>
+                        <input type="text" 
+                               id="recipient-bank" 
+                               class="text-input" 
+                               data-translate-placeholder="bankNamePlaceholder" 
+                               required>
+                    </div>
+                    <div class="input-group">
+                        <label for="recipient-account" data-translate="accountNumber">رقم الحساب البنكي :</label>
+                        <input type="text" 
+                               id="recipient-account" 
+                               class="text-input" 
+                               data-translate-placeholder="accountNumberPlaceholder" 
+                               required>
+                    </div>
+                    
+                    <!-- قسم تحميل صورة التحويل -->
+                    <div class="form-group">
+                        <label data-translate="bankTransferScreenshot">صورة الحوالة المصرفية:</label>
+                        <div class="upload-box" onclick="document.getElementById('transfer-image').click()">
+                            <input type="file" 
+                                   id="transfer-image" 
+                                   accept=".jpg,.jpeg,.png,.pdf" 
+                                   style="display: none;"
+                                   onchange="handleTransferImageUpload(this)">
+                            <div class="upload-content" id="upload-placeholder">
+                                <span class="plus-icon">+</span>
+                                <p data-translate="uploadText">الرجاء تحميل لقطة شاشة للحوالة المصرفية الناجحة</p>
+                                <small data-translate="imageFormat">(jpg, jpeg, png, pdf - الحجم الأقصى للملف هو 20 ميغا بايت)</small>
+                            </div>
+                            <img id="preview-image" style="display: none; max-width: 100%; max-height: 200px;">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" data-translate="saveInfo">تسجيل المعلومات</button>
+                    <div id="success-message" class="success-message" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <div class="success-text">
+                            <div>تمت العملية بنجاح!</div>
+                            <div>سوف تتوصل بعمولتك في غضون بضع ساعات</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

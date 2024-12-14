@@ -1,0 +1,3032 @@
+.top-nav {
+    background-color: #90c2ce;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* تنسيقات زر واتساب */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-1px);
+}
+
+.whatsapp-btn i {
+    font-size: 1.2em;
+}
+
+/* تنسيقات محدد اللغة */
+.language-selector {
+    position: relative;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #e9ecef;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown a {
+    display: block;
+    padding: 8px 20px;
+    color: #2d3436;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #f8f9fa;
+}
+
+/* تنسيقات قسم الملف الشخصي */
+.profile-info {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-group:last-child {
+    border-bottom: none;
+}
+
+.info-field {
+    flex-grow: 1;
+}
+
+.info-field label {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background-color: transparent;
+    border: 1px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+/* تنسيقات النموذج المنبثق */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: #2d3436;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5b4bc4;
+}
+
+.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+/* تنسيقات قسم معلومات الدفع */
+.payment-info {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6c757d;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.info-value {
+    flex-grow: 1;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+/* تنسيقات قسم تحميل الملفات */
+.upload-box {
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #6c5ce7;
+    background-color: #f8f9fa;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.plus-icon {
+    font-size: 2em;
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.file-types {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+/* تحسينات التجاوب */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .info-label {
+        width: 100%;
+    }
+
+    .copy-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* تنسيقات نموذج تسجيل الاشتراك */
+#signup-form {
+    padding: 4px 0;
+}
+
+#signup-form .form-group {
+    margin-bottom: 3px;
+}
+
+#signup-form label {
+    display: block;
+    margin-bottom: 2px;
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .text-input {
+    width: 100%;
+    height: 24px;
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #2d3436;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .text-input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.15);
+    outline: none;
+}
+
+#signup-form .submit-btn {
+    width: 100%;
+    height: 26px;
+    padding: 4px;
+    margin-top: 9px;
+    margin-bottom: 4px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .submit-btn:hover {
+    background-color: #5b4bc4;
+}
+
+/* تنسيقات خاصة بقسم تسجيل الدخول */
+#login-section {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+#login-section .logo {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #7a6af7;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#login-section h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#login-section label {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#login-section .text-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #1a1a1a;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-bottom: 15px;
+}
+
+#login-section .text-input::placeholder {
+    color: #757575;
+    opacity: 1;
+    font-weight: 400;
+}
+
+#login-section .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+#login-section .switch-auth {
+    text-align: center;
+    margin-top: 20px;
+    color: #1a1a1a;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+#login-section .switch-auth a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* تحسين تنسيقات الأزرار في شريط التبديل */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.auth-tabs .tab-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #6c5ce7;
+    border-bottom-color: #6c5ce7;
+}
+
+/* تنسيق شعار SARIF في كلا القسمين */
+.auth-section .logo {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #7a6af7;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* تنسيقات عامة للصفحة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* تنسيق العنصر body */
+body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* تنسيقات صفحة المصادحة */
+body.auth-page {
+    background-image: url('images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* تنسيقات الحاوية الرئيسية للمصادحة */
+.auth-container {
+    background: transparent;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin: 5px;
+}
+
+.auth-container h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-shadow: none;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 3px;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-shadow: none;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+.auth-container .text-input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    min-height: 30px;
+    line-height: 1.2;
+}
+
+.auth-container .text-input::placeholder {
+    color: #757575;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.auth-container .submit-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    min-height: 35px;
+    line-height: 1.2;
+}
+
+.auth-container .switch-form {
+    text-align: center;
+    margin-top: 12px;
+    color: #2d3436;
+    font-size: 0.8em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.auth-container .switch-form a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-inline-start: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-container .switch-form a:hover {
+    color: #5b4bc4;
+    text-decoration: underline;
+}
+
+/* تحسين مظهر رسائل الخطأ */
+.auth-container .error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* تنسيقات خاصة للغة العربية */
+[dir="rtl"] .auth-container {
+    text-align: right;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+.auth-section {
+    background: transparent;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.auth-section h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auth-tabs .tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #1e3c72;
+    border-bottom-color: #1e3c72;
+}
+
+.auth-tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #6c5ce7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #4834d4;
+    border-bottom: 2px solid #4834d4;
+    font-weight: 600;
+}
+
+.auth-tabs .tab-btn:hover {
+    color: #4834d4;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00416A;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #00416A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #005c94;
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.switch-auth a {
+    color: #7a6af7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيقات النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group .submit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-group .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.payment-info {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    min-width: 120px;
+    color: #666;
+}
+
+.info-value {
+    flex: 1;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.copy-btn {
+    background: #00416A;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin: 0;
+    width: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.copy-btn:hover {
+    background: #005c94;
+    transform: translateY(-2px);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.toast.success {
+    background-color: #4CAF50;
+}
+
+.toast.error {
+    background-color: #f44336;
+}
+
+.toast.info {
+    background-color: #2196F3;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    20% { opacity: 1; transform: translate(-50%, 0); }
+    80% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    margin: 10px 0 20px;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #007bff;
+    background-color: #f1f8ff;
+}
+
+.upload-box .plus-icon {
+    font-size: 28px;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.upload-box .upload-text {
+    margin: 5px 0;
+    color: #495057;
+    text-align: center;
+    width: 100%;
+}
+
+.upload-box .small {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 8px;
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+[dir="rtl"] .input-group {
+    text-align: right;
+}
+
+[dir="ltr"] .input-group {
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out;
+}
+
+[dir="rtl"] .input-group input {
+    text-align: right;
+}
+
+[dir="ltr"] .input-group input {
+    text-align: left;
+}
+
+[dir="rtl"] .input-group input::placeholder {
+    text-align: right;
+}
+
+[dir="ltr"] .input-group input::placeholder {
+    text-align: left;
+}
+
+#russian-bank-form .input-group input {
+    text-align: right;
+}
+
+#russian-bank-form .input-group input::placeholder {
+    text-align: right;
+}
+
+#russian-bank-form input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #6c5ce7;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: right;
+    direction: rtl;
+    transition: all 0.3s ease;
+}
+
+#russian-bank-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(108,92,231,0.1);
+}
+
+#russian-bank-form input::placeholder {
+    text-align: right;
+    direction: rtl;
+    color: #757575;
+}
+
+[dir="ltr"] #russian-bank-form input {
+    text-align: left;
+    direction: ltr;
+}
+
+[dir="ltr"] #russian-bank-form input::placeholder {
+    text-align: left;
+    direction: ltr;
+}
+
+#contact-section textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.steps-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step-block {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-right: 4px solid #00416A;
+}
+
+.step-block h4 {
+    color: #00416A;
+    margin-bottom: 1rem;
+}
+
+.step-block ol {
+    padding-right: 1.5rem;
+}
+
+.step-block ul {
+    padding-right: 1.5rem;
+    margin: 10px 0;
+}
+
+.step-block li {
+    margin-bottom: 0.5rem;
+}
+
+.profile-info {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-group:last-child {
+    border-bottom: none;
+}
+
+.info-field {
+    flex-grow: 1;
+}
+
+.info-field label {
+    font-weight: bold;
+    color: #00416A;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.edit-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-btn {
+    background: transparent;
+    border: 1px solid #00416A;
+    color: #00416A;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: #00416A;
+    color: white;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
+}
+
+.back-btn i {
+    font-size: 14px;
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.step {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step h3 {
+    color: #1e3c72;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #1e3c72;
+    padding-bottom: 10px;
+}
+
+.sub-steps {
+    padding-right: 20px;
+}
+
+.sub-steps h4 {
+    color: #2a4d8f;
+    margin: 15px 0 10px;
+    font-size: 1.1rem;
+}
+
+.sub-steps ul {
+    list-style-type: none;
+    padding-right: 20px;
+    margin: 10px 0;
+}
+
+.sub-steps li {
+    margin: 8px 0;
+    position: relative;
+    line-height: 1.6;
+}
+
+.sub-steps li:before {
+    content: "•";
+    color: #1e3c72;
+    font-weight: bold;
+    position: absolute;
+    right: -15px;
+}
+
+[dir="ltr"] .sub-steps ul {
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+[dir="ltr"] .sub-steps li:before {
+    content: "•";
+    color: #1e3c72;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.important-tips {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #1e3c72;
+}
+
+.important-tips h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.important-tips ul {
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.important-tips li {
+    margin: 10px 0;
+    position: relative;
+    line-height: 1.6;
+}
+
+.important-tips li:before {
+    content: "⚠️";
+    position: absolute;
+    right: -25px;
+}
+
+[dir="ltr"] .important-tips ul {
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+[dir="ltr"] .important-tips li:before {
+    content: "⚠️";
+    position: absolute;
+    left: -25px;
+}
+
+.important-tips p {
+    margin-top: 15px;
+    color: #1e3c72;
+    font-weight: 600;
+    text-align: center;
+}
+
+.profile-icon-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.profile-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    color: white; /* لون الأيقونة */
+}
+
+[dir="rtl"] .profile-icon-btn {
+    margin-left: 8px;
+}
+
+[dir="ltr"] .profile-icon-btn {
+    margin-right: 8px;
+}
+
+.contact-icon-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.contact-icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+[dir="rtl"] .contact-icon-btn {
+    margin: 0 8px;
+}
+
+[dir="ltr"] .contact-icon-btn {
+    margin: 0 8px;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+}
+
+.logout-icon {
+    width: 32px;
+    height: 32px;
+    color: #ff3b30; /* لون أحمر */
+}
+
+.logout-btn:hover .logout-icon {
+    color: #ff1a1a; /* لون أحمر أغمق عند التحويم */
+}
+
+[dir="rtl"] .logout-btn {
+    margin-right: 8px;
+}
+
+[dir="ltr"] .logout-btn {
+    margin-left: 8px;
+}
+
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.lang-text {
+    font-weight: 500;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 120px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 4px;
+    z-index: 1000;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.language-dropdown a:hover {
+    background-color: #f5f5f5;
+}
+
+.language-dropdown a:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.language-dropdown a:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.fa-chevron-down {
+    font-size: 12px;
+    color: #666;
+}
+
+[dir="rtl"] .language-dropdown {
+    right: 0;
+    left: auto;
+}
+
+[dir="ltr"] .language-dropdown {
+    left: 0;
+    right: auto;
+}
+
+.steps-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: #ffffff;
+    color: #1e3c72;
+    border: 2px solid #1e3c72;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.steps-btn:hover {
+    background-color: #1e3c72;
+    color: white;
+}
+
+.steps-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+}
+
+.steps-btn span {
+    font-size: 16px;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-btn i {
+    font-size: 20px;
+}
+
+[dir="ltr"] .whatsapp-btn {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.converter-container .input-group {
+    margin-bottom: 0;
+}
+
+.converter-container label {
+    margin-bottom: 2px;
+}
+
+.converter-container input {
+    padding: 8px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.convert-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #8e44ad;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.convert-btn:hover {
+    background-color: #6c2d7c;
+    transform: translateY(-2px);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+.steps-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.steps-btn:hover {
+    background: #e0e0e0;
+}
+
+.steps-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.upload-box {
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #007bff;
+    background-color: #f1f8ff;
+}
+
+.upload-content {
+    text-align: center;
+}
+
+.plus-icon {
+    font-size: 36px;
+    color: #6c757d;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.upload-content p {
+    margin: 5px 0;
+    color: #6c757d;
+}
+
+.file-types {
+    font-size: 12px;
+    color: #999;
+}
+
+.upload-box.dragover {
+    border-color: #007bff;
+    background-color: #f1f8ff;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.auth-tab {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #666;
+    position: relative;
+}
+
+.auth-tab.active {
+    color: #1a237e;
+    font-weight: 500;
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1a237e;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #666;
+    font-size: 14px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.auth-submit {
+    background: #1a237e;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-submit:hover {
+    background: #283593;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #1a237e;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+[dir="rtl"] .auth-container {
+    text-align: right;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+/* أنماط قسم الملف الشخصي */
+.profile-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-group:last-child {
+    border-bottom: none;
+}
+
+.info-field {
+    flex-grow: 1;
+}
+
+.info-field label {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background-color: transparent;
+    border: 1px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    margin-inline-start: auto;
+}
+
+[dir="rtl"] .edit-btn {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="ltr"] .edit-btn {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.edit-btn:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.info-value.readonly {
+    background-color: #e9ecef;
+    color: #666;
+}
+
+[contenteditable="true"] {
+    border: 2px solid #6c5ce7;
+    background-color: #fff !important;
+    padding: 7px !important;
+    outline: none;
+}
+
+[contenteditable="true"]:focus {
+    box-shadow: 0 0 0 2px rgba(108,92,231,0.25);
+}
+
+#profile-section h3 {
+    color: #333;
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+/* نموذج تغيير كلمة المرور */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    opacity: 0.9;
+}
+
+.change-password-btn {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.change-password-btn:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيقات شريط التنقل العلوي */
+.top-nav {
+    background-color: #90c2ce;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* تنسيقات زر واتساب */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-1px);
+}
+
+.whatsapp-btn i {
+    font-size: 1.2em;
+}
+
+/* تنسيقات محدد اللغة */
+.language-selector {
+    position: relative;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: #e9ecef;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown a {
+    display: block;
+    padding: 8px 20px;
+    color: #2d3436;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #f8f9fa;
+}
+
+/* تنسيقات قسم الملف الشخصي */
+.profile-info {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-group:last-child {
+    border-bottom: none;
+}
+
+.info-field {
+    flex-grow: 1;
+}
+
+.info-field label {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background-color: transparent;
+    border: 1px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+/* تنسيقات النموذج المنبثق */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: #2d3436;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5b4bc4;
+}
+
+.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+/* تنسيقات قسم معلومات الدفع */
+.payment-info {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6c757d;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.info-value {
+    flex-grow: 1;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+/* تنسيقات قسم تحميل الملفات */
+.upload-box {
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: #6c5ce7;
+    background-color: #f8f9fa;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.plus-icon {
+    font-size: 2em;
+    color: #6c5ce7;
+    margin-bottom: 10px;
+}
+
+.file-types {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+/* تحسينات التجاوب */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .info-label {
+        width: 100%;
+    }
+
+    .copy-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* تنسيقات نموذج تسجيل الاشتراك */
+#signup-form {
+    padding: 4px 0;
+}
+
+#signup-form .form-group {
+    margin-bottom: 3px;
+}
+
+#signup-form label {
+    display: block;
+    margin-bottom: 2px;
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .text-input {
+    width: 100%;
+    height: 24px;
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #2d3436;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .text-input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.15);
+    outline: none;
+}
+
+#signup-form .submit-btn {
+    width: 100%;
+    height: 26px;
+    padding: 4px;
+    margin-top: 9px;
+    margin-bottom: 4px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+#signup-form .submit-btn:hover {
+    background-color: #5b4bc4;
+}
+
+/* تنسيقات خاصة بقسم تسجيل الدخول */
+#login-section {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+#login-section .logo {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #7a6af7;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#login-section h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#login-section label {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#login-section .text-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #1a1a1a;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-bottom: 15px;
+}
+
+#login-section .text-input::placeholder {
+    color: #757575;
+    opacity: 1;
+    font-weight: 400;
+}
+
+#login-section .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+#login-section .switch-auth {
+    text-align: center;
+    margin-top: 20px;
+    color: #1a1a1a;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+#login-section .switch-auth a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* تحسين تنسيقات الأزرار في شريط التبديل */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.auth-tabs .tab-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #6c5ce7;
+    border-bottom-color: #6c5ce7;
+}
+
+/* تنسيق شعار SARIF في كلا القسمين */
+.auth-section .logo {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #7a6af7;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* تنسيقات عامة للصفحة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* تنسيق العنصر body */
+body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* تنسيقات صفحة المصادحة */
+body.auth-page {
+    background-image: url('images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* تنسيقات الحاوية الرئيسية للمصادحة */
+.auth-container {
+    background: transparent;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin: 5px;
+}
+
+.auth-container h1 {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-shadow: none;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 3px;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-shadow: none;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+.auth-container .text-input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.85em;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    min-height: 30px;
+    line-height: 1.2;
+}
+
+.auth-container .text-input::placeholder {
+    color: #757575;
+    opacity: 1;
+    font-weight: 400;
+}
+
+.auth-container .submit-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    min-height: 35px;
+    line-height: 1.2;
+}
+
+.auth-container .switch-form {
+    text-align: center;
+    margin-top: 12px;
+    color: #2d3436;
+    font-size: 0.8em;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.auth-container .switch-form a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-inline-start: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-container .switch-form a:hover {
+    color: #5b4bc4;
+    text-decoration: underline;
+}
+
+/* تحسين مظهر رسائل الخطأ */
+.auth-container .error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* تنسيقات خاصة للغة العربية */
+[dir="rtl"] .auth-container {
+    text-align: right;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+.auth-section {
+    background: transparent;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.auth-section h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auth-tabs .tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #1e3c72;
+    border-bottom-color: #1e3c72;
+}
+
+.auth-tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #6c5ce7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #4834d4;
+    border-bottom: 2px solid #4834d4;
+    font-weight: 600;
+}
+
+.auth-tabs .tab-btn:hover {
+    color: #4834d4;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00416A;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيقات خاصة بقسم إنشاء الحساب */
+#signup-section {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#signup-section .form-group {
+    margin-bottom: 15px;
+}
+
+#signup-section label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+#signup-section input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#signup-section input:focus {
+    border-color: #6c5ce7;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.1);
+}
+
+#signup-section input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: right;
+    direction: rtl;
+}
+
+#signup-section input::placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="ltr"] #signup-section input {
+    text-align: left;
+    direction: ltr;
+}
+
+[dir="ltr"] #signup-section input::placeholder {
+    text-align: left;
+    direction: ltr;
+}
+
+/* تنسيق عنوان نموذج الحساب البنكي */
+#russian-bank-info h3 {
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+/* تنسيقات أزرار التبويب */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auth-tabs .tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #1e3c72;
+    border-bottom-color: #1e3c72;
+}
+
+.auth-tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #6c5ce7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #4834d4;
+    border-bottom: 2px solid #4834d4;
+    font-weight: 600;
+}
+
+.auth-tabs .tab-btn:hover {
+    color: #4834d4;
+}
+
+/* إزالة أي تنسيقات متداخلة */
+.auth-section .auth-tabs .tab-btn {
+    color: #6c5ce7 !important;
+}
+
+.auth-section .auth-tabs .tab-btn.active {
+    color: #4834d4 !important;
+}
+
+.auth-page .auth-tabs .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #6c5ce7 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.auth-page .auth-tabs .tab-btn.active {
+    color: #4834d4 !important;
+    border-bottom: 2px solid #4834d4;
+    font-weight: 600;
+}
+
+.auth-page .auth-tabs .tab-btn:hover {
+    color: #4834d4 !important;
+}
+
+.auth-page .auth-container .auth-tabs .tab-btn {
+    color: #6c5ce7 !important;
+    text-shadow: none;
+}
+
+.auth-page .auth-container .auth-tabs .tab-btn.active {
+    color: #4834d4 !important;
+    text-shadow: none;
+}
+
+/* تنسيق عنوان محول العملات */
+#converter-section h2 {
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+/* تنسيق حقول الإدخال في قسم محول العملات */
+#converter-section input[type="text"],
+#converter-section input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6c5ce7;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+#converter-section input[type="text"]:focus,
+#converter-section input[type="number"]:focus {
+    outline: none;
+    border-color: #4834d4;
+    box-shadow: 0 0 5px rgba(108, 92, 231, 0.3);
+}
+
+/* تنسيق عنوان معلومات الدفع */
+#payment-info h3 {
+    color: #6c5ce7;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.bank-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bank-btn {
+    padding: 1rem 2rem;
+    border: 2px solid #8e44ad;
+    background: white;
+    color: #8e44ad;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.bank-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(142, 68, 173, 0.2);
+}
+
+.bank-btn.active {
+    background: #8e44ad;
+    color: white;
+}
+
+.bank-info {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.bank-info.active {
+    display: block;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-label {
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.info-value {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.copy-btn {
+    padding: 0.5rem 1rem;
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.copy-btn:hover {
+    background: #7d3c98;
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease-out, fadeOut 0.5s ease-out 1.5s forwards;
+    z-index: 1000;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.bank-btn {
+    padding: 12px 24px;
+    border: 2px solid #8e44ad;
+    background: white;
+    color: #8e44ad;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bank-btn.active {
+    background: #8e44ad;
+    color: white;
+    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.2);
+}
+
+.bank-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(142, 68, 173, 0.2);
+}
+
+.copy-btn {
+    padding: 8px 16px;
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #7d3c98;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(142, 68, 173, 0.2);
+}
+
+/* رسالة النجاح في قسم معلومات الحساب البنكي في روسيا */
+.success-message {
+    color: #4CAF50;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* رسالة النجاح */
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.success-icon {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.success-text {
+    color: #4CAF50;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
