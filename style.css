@@ -23,270 +23,8 @@
     gap: 10px;
 }
 
-/* تنسيقات زر واتساب */
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #25d366;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
 
-.whatsapp-btn:hover {
-    background-color: #128c7e;
-    transform: translateY(-1px);
-}
 
-.whatsapp-btn i {
-    font-size: 1.2em;
-}
-
-/* تنسيقات محدد اللغة */
-.language-selector {
-    position: relative;
-}
-
-.lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.lang-btn:hover {
-    background-color: #e9ecef;
-}
-
-.language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 8px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
-.language-dropdown.show {
-    display: block;
-}
-
-.language-dropdown a {
-    display: block;
-    padding: 8px 20px;
-    color: #2d3436;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.language-dropdown a:hover {
-    background-color: #f8f9fa;
-}
-
-/* تنسيقات قسم الملف الشخصي */
-.profile-info {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.info-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.info-group:last-child {
-    border-bottom: none;
-}
-
-.info-field {
-    flex-grow: 1;
-}
-
-.info-field label {
-    color: #6c757d;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-}
-
-.info-value {
-    color: #2d3436;
-    font-weight: 600;
-}
-
-.edit-btn {
-    background-color: transparent;
-    border: 1px solid #6c5ce7;
-    color: #6c5ce7;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.edit-btn:hover {
-    background-color: #6c5ce7;
-    color: white;
-}
-
-/* تنسيقات النموذج المنبثق */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.modal-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-primary {
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary {
-    background-color: #e9ecef;
-    color: #2d3436;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #5b4bc4;
-}
-
-.btn-secondary:hover {
-    background-color: #dee2e6;
-}
-
-/* تنسيقات قسم معلومات الدفع */
-.payment-info {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.info-row {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.info-row:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    color: #6c757d;
-    width: 150px;
-    flex-shrink: 0;
-}
-
-.info-value {
-    flex-grow: 1;
-    font-weight: 600;
-    color: #2d3436;
-}
-
-.copy-btn {
-    background-color: transparent;
-    border: 1px solid #6c5ce7;
-    color: #6c5ce7;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s ease;
-}
-
-.copy-btn:hover {
-    background-color: #6c5ce7;
-    color: white;
-}
-
-/* تنسيقات قسم تحميل الملفات */
-.upload-box {
-    border: 2px dashed #dee2e6;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.upload-box:hover {
-    border-color: #6c5ce7;
-    background-color: #f8f9fa;
-}
-
-.upload-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.plus-icon {
-    font-size: 2em;
-    color: #6c5ce7;
-    margin-bottom: 10px;
-}
-
-.file-types {
-    color: #6c757d;
-    font-size: 0.9em;
-}
 
 /* تحسينات التجاوب */
 @media (max-width: 768px) {
@@ -414,433 +152,8 @@
     }
 }
 
-/* تنسيقات نموذج تسجيل الاشتراك */
-#signup-form {
-    padding: 4px 0;
-}
 
-#signup-form .form-group {
-    margin-bottom: 3px;
-}
 
-#signup-form label {
-    display: block;
-    margin-bottom: 2px;
-    color: #2d3436;
-    font-weight: 600;
-    font-size: 14px;
-    font-family: 'Cairo', sans-serif;
-}
-
-#signup-form .text-input {
-    width: 100%;
-    height: 24px;
-    padding: 2px 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 13px;
-    color: #2d3436;
-    background: #ffffff;
-    transition: all 0.2s ease;
-    font-family: 'Cairo', sans-serif;
-}
-
-#signup-form .text-input:focus {
-    border-color: #6c5ce7;
-    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.15);
-    outline: none;
-}
-
-#signup-form .submit-btn {
-    width: 100%;
-    height: 26px;
-    padding: 4px;
-    margin-top: 9px;
-    margin-bottom: 4px;
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: 'Cairo', sans-serif;
-}
-
-#signup-form .submit-btn:hover {
-    background-color: #5b4bc4;
-}
-
-/* تنسيقات خاصة بقسم تسجيل الدخول */
-#login-section {
-    background: rgba(255, 255, 255, 0.98);
-}
-
-#login-section .logo {
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 800;
-    color: #7a6af7;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-#login-section h1 {
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-#login-section label {
-    color: #1a1a1a;
-    font-weight: 600;
-    font-size: 1.1em;
-    letter-spacing: 0.3px;
-    margin-bottom: 8px;
-    display: block;
-}
-
-#login-section .text-input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1.1em;
-    color: #1a1a1a;
-    background: #ffffff;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    margin-bottom: 15px;
-}
-
-#login-section .text-input::placeholder {
-    color: #757575;
-    opacity: 1;
-    font-weight: 400;
-}
-
-#login-section .submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-    letter-spacing: 0.5px;
-}
-
-#login-section .switch-auth {
-    text-align: center;
-    margin-top: 20px;
-    color: #1a1a1a;
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-#login-section .switch-auth a {
-    color: #6c5ce7;
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-/* تحسين تنسيقات الأزرار في شريط التبديل */
-.auth-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    gap: 10px;
-}
-
-.auth-tabs .tab-btn {
-    padding: 10px 20px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #1a1a1a;
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 0.3px;
-}
-
-.auth-tabs .tab-btn.active {
-    color: #6c5ce7;
-    border-bottom-color: #6c5ce7;
-}
-
-/* تنسيق شعار SARIF في كلا القسمين */
-.auth-section .logo {
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 800;
-    color: #7a6af7;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-/* تنسيقات عامة للصفحة */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Cairo', sans-serif;
-}
-
-/* تنسيق العنصر body */
-body {
-    background-color: #f5f5f5;
-    min-height: 100vh;
-}
-
-/* تنسيقات صفحة المصادحة */
-body.auth-page {
-    background-image: url('images/background.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* تنسيقات الحاوية الرئيسية للمصادحة */
-.auth-container {
-    background: transparent;
-    padding: 12px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 300px;
-    margin: 5px;
-}
-
-.auth-container h1 {
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 12px;
-    font-size: 1.2em;
-    font-weight: 700;
-    text-shadow: none;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-}
-
-.auth-container label {
-    display: block;
-    margin-bottom: 3px;
-    color: #1a1a1a;
-    font-weight: 600;
-    font-size: 0.85em;
-    text-shadow: none;
-    letter-spacing: 0.3px;
-    line-height: 1.2;
-}
-
-.auth-container .text-input {
-    width: 100%;
-    padding: 6px 10px;
-    border: 2px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 0.85em;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    min-height: 30px;
-    line-height: 1.2;
-}
-
-.auth-container .text-input::placeholder {
-    color: #757575;
-    opacity: 1;
-    font-weight: 400;
-}
-
-.auth-container .submit-btn {
-    width: 100%;
-    padding: 8px;
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-    min-height: 35px;
-    line-height: 1.2;
-}
-
-.auth-container .switch-form {
-    text-align: center;
-    margin-top: 12px;
-    color: #2d3436;
-    font-size: 0.8em;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-.auth-container .switch-form a {
-    color: #6c5ce7;
-    text-decoration: none;
-    font-weight: 600;
-    margin-inline-start: 5px;
-    transition: all 0.3s ease;
-}
-
-.auth-container .switch-form a:hover {
-    color: #5b4bc4;
-    text-decoration: underline;
-}
-
-/* تحسين مظهر رسائل الخطأ */
-.auth-container .error-message {
-    color: #e74c3c;
-    font-size: 0.9em;
-    margin-top: 5px;
-    font-weight: 500;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-}
-
-/* تنسيقات خاصة للغة العربية */
-[dir="rtl"] .auth-container {
-    text-align: right;
-}
-
-[dir="rtl"] .form-group {
-    text-align: right;
-}
-
-.auth-section {
-    background: transparent;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.auth-section h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.auth-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.auth-tabs .tab-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    background: none;
-    color: #666;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.auth-tabs .tab-btn.active {
-    color: #1e3c72;
-    border-bottom-color: #1e3c72;
-}
-
-.auth-tabs .tab-btn {
-    background: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: #6c5ce7;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.auth-tabs .tab-btn.active {
-    color: #4834d4;
-    border-bottom: 2px solid #4834d4;
-    font-weight: 600;
-}
-
-.auth-tabs .tab-btn:hover {
-    color: #4834d4;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-    font-weight: 500;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #00416A;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 1rem;
-    background: #00416A;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 1rem;
-}
-
-.submit-btn:hover {
-    background: #005c94;
-}
-
-.switch-auth {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.switch-auth a {
-    color: #7a6af7;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.switch-auth a:hover {
-    text-decoration: underline;
-}
 
 /* تنسيقات النافذة المنبثقة */
 .modal {
@@ -1120,7 +433,7 @@ body.auth-page {
 #russian-bank-form input {
     width: 100%;
     padding: 8px 12px;
-    border: 2px solid #6c5ce7;
+    border: 2px solid #7d3c98;
     border-radius: 4px;
     font-size: 14px;
     text-align: right;
@@ -1230,7 +543,7 @@ body.auth-page {
 }
 
 .edit-btn {
-    background: transparent;
+    background-color: transparent;
     border: 1px solid #00416A;
     color: #00416A;
     padding: 0.3rem 1rem;
@@ -1838,91 +1151,8 @@ body.auth-page {
     text-align: right;
 }
 
-/* أنماط قسم الملف الشخصي */
-.profile-info {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
 
-.info-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-}
 
-.info-group:last-child {
-    border-bottom: none;
-}
-
-.info-field {
-    flex-grow: 1;
-}
-
-.info-field label {
-    color: #666;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-}
-
-.info-value {
-    color: #2d3436;
-    font-weight: 600;
-}
-
-.edit-btn {
-    background-color: transparent;
-    border: 1px solid #6c5ce7;
-    color: #6c5ce7;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
-    margin-inline-start: auto;
-}
-
-[dir="rtl"] .edit-btn {
-    margin-right: auto;
-    margin-left: 0;
-}
-
-[dir="ltr"] .edit-btn {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-.edit-btn:hover {
-    background-color: #6c5ce7;
-    color: white;
-}
-
-.info-value.readonly {
-    background-color: #e9ecef;
-    color: #666;
-}
-
-[contenteditable="true"] {
-    border: 2px solid #6c5ce7;
-    background-color: #fff !important;
-    padding: 7px !important;
-    outline: none;
-}
-
-[contenteditable="true"]:focus {
-    box-shadow: 0 0 0 2px rgba(108,92,231,0.25);
-}
-
-#profile-section h3 {
-    color: #333;
-    margin: 20px 0;
-    font-size: 1.1em;
-}
 
 /* نموذج تغيير كلمة المرور */
 .modal {
@@ -2020,7 +1250,7 @@ body.auth-page {
 
 /* تنسيقات شريط التنقل العلوي */
 .top-nav {
-    background-color: #90c2ce;
+    background-color: #8e44ad;
     padding: 15px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -2029,7 +1259,7 @@ body.auth-page {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-radius: 8px;
+    border-radius: 89px;
 }
 
 .nav-group {
@@ -2044,81 +1274,11 @@ body.auth-page {
     gap: 10px;
 }
 
-/* تنسيقات زر واتساب */
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #25d366;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
 
-.whatsapp-btn:hover {
-    background-color: #128c7e;
-    transform: translateY(-1px);
-}
-
-.whatsapp-btn i {
-    font-size: 1.2em;
-}
-
-/* تنسيقات محدد اللغة */
-.language-selector {
-    position: relative;
-}
-
-.lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.lang-btn:hover {
-    background-color: #e9ecef;
-}
-
-.language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 8px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: none;
-}
-
-.language-dropdown.show {
-    display: block;
-}
-
-.language-dropdown a {
-    display: block;
-    padding: 8px 20px;
-    color: #2d3436;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.language-dropdown a:hover {
-    background-color: #f8f9fa;
-}
 
 /* تنسيقات قسم الملف الشخصي */
 .profile-info {
-    background-color: #ffffff;
+    background-color:  #f0d9f9;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -2129,7 +1289,7 @@ body.auth-page {
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 5px solid #7d3c98 ;
 }
 
 .info-group:last-child {
@@ -2141,20 +1301,20 @@ body.auth-page {
 }
 
 .info-field label {
-    color: #6c757d;
+    color: #7d3c98 ;
     font-size: 0.9em;
     margin-bottom: 5px;
 }
 
 .info-value {
-    color: #2d3436;
+    color: #000000;
     font-weight: 600;
 }
 
 .edit-btn {
     background-color: transparent;
-    border: 1px solid #6c5ce7;
-    color: #6c5ce7;
+    border: 5px solid #7d3c98;
+    color: #7d3c98 ;
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
@@ -2162,123 +1322,17 @@ body.auth-page {
 }
 
 .edit-btn:hover {
-    background-color: #6c5ce7;
+    background-color:  #7d3c98;
     color: white;
 }
 
-/* تنسيقات النموذج المنبثق */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
 
-.modal.show {
-    display: flex;
-}
 
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
 
-.modal-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-primary {
-    background-color: #6c5ce7;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary {
-    background-color: #e9ecef;
-    color: #2d3436;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #5b4bc4;
-}
-
-.btn-secondary:hover {
-    background-color: #dee2e6;
-}
-
-/* تنسيقات قسم معلومات الدفع */
-.payment-info {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.info-row {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.info-row:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    color: #6c757d;
-    width: 150px;
-    flex-shrink: 0;
-}
-
-.info-value {
-    flex-grow: 1;
-    font-weight: 600;
-    color: #2d3436;
-}
-
-.copy-btn {
-    background-color: transparent;
-    border: 1px solid #6c5ce7;
-    color: #6c5ce7;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s ease;
-}
-
-.copy-btn:hover {
-    background-color: #6c5ce7;
-    color: white;
-}
 
 /* تنسيقات قسم تحميل الملفات */
 .upload-box {
-    border: 2px dashed #dee2e6;
+    border: 2px dashed #7d3c98   ;
     border-radius: 12px;
     padding: 30px;
     text-align: center;
@@ -2287,10 +1341,9 @@ body.auth-page {
 }
 
 .upload-box:hover {
-    border-color: #6c5ce7;
-    background-color: #f8f9fa;
+    border-color: #8e44ad  ;
+    background-color: #f4e3fc ;
 }
-
 .upload-content {
     display: flex;
     flex-direction: column;
@@ -2298,16 +1351,19 @@ body.auth-page {
     gap: 10px;
 }
 
+
+
 .plus-icon {
     font-size: 2em;
-    color: #6c5ce7;
+    color: #6c5ce7 ;
     margin-bottom: 10px;
 }
-
 .file-types {
     color: #6c757d;
     font-size: 0.9em;
 }
+
+
 
 /* تحسينات التجاوب */
 @media (max-width: 768px) {
@@ -2434,6 +1490,7 @@ body.auth-page {
         font-size: 0.9em;
     }
 }
+
 
 /* تنسيقات نموذج تسجيل الاشتراك */
 #signup-form {
@@ -2575,31 +1632,8 @@ body.auth-page {
     margin-right: 5px;
 }
 
-/* تحسين تنسيقات الأزرار في شريط التبديل */
-.auth-tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    gap: 10px;
-}
 
-.auth-tabs .tab-btn {
-    padding: 10px 20px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #1a1a1a;
-    background: none;
-    border: none;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 0.3px;
-}
 
-.auth-tabs .tab-btn.active {
-    color: #6c5ce7;
-    border-bottom-color: #6c5ce7;
-}
 
 /* تنسيق شعار SARIF في كلا القسمين */
 .auth-section .logo {
@@ -2848,6 +1882,7 @@ body.auth-page {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
 /* تنسيقات خاصة بقسم إنشاء الحساب */
 #signup-section {
     background: rgba(255, 255, 255, 0.98);
@@ -2908,20 +1943,24 @@ body.auth-page {
     direction: ltr;
 }
 
+
+
+
+
 /* تنسيق عنوان نموذج الحساب البنكي */
 #russian-bank-info h3 {
-    color: #6c5ce7;
+    color: #8e44ad  ;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 1.2em;
+    font-weight: 6000;
+    font-size: 1.3em;
 }
 
 /* تنسيقات أزرار التبويب */
 .auth-tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 199rem;
     margin-bottom: 2rem;
 }
 
@@ -2929,7 +1968,7 @@ body.auth-page {
     padding: 0.5rem 1rem;
     border: none;
     background: none;
-    color: #666;
+    color:   #666 ;
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
@@ -3004,11 +2043,11 @@ body.auth-page {
 
 /* تنسيق عنوان محول العملات */
 #converter-section h2 {
-    color: #6c5ce7;
-    text-align: center;
+    color: #8e44ad;
     margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 1.5em;
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: 6000;
 }
 
 /* تنسيق حقول الإدخال في قسم محول العملات */
@@ -3032,11 +2071,11 @@ body.auth-page {
 
 /* تنسيق عنوان معلومات الدفع */
 #payment-info h3 {
-    color: #6c5ce7;
+    color: #8e44ad;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 1.3em;
+    font-weight: 6000;
+    font-size: 1.9em;
 }
 
 .bank-selector {
@@ -3223,4 +2262,78 @@ body.auth-page {
     font-family: 'Cairo', sans-serif;
     font-size: 14px;
     line-height: 1.5;
+}
+
+.edit-container {
+    margin-top: 10px;
+    display: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.save-btn {
+    background-color: #7d3c98;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تحسين تنسيقات الأزرار في شريط التبديل */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.auth-tabs .tab-btn {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.auth-tabs .tab-btn.active {
+    color: #6c5ce7;
+    border-bottom-color: #6c5ce7;
+}
+
+#russian-bank-form .submit-btn {
+    background-color: #7d3c98;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
 }
