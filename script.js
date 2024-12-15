@@ -155,7 +155,7 @@ function updateProfileInfo() {
     if (!currentUser) return;
 
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find(u => u.name === currentUser);
+    const user = users.find(u => u.fullName === currentUser);
 
     if (user) {
         // تحديث معلومات العرض
@@ -164,7 +164,7 @@ function updateProfileInfo() {
         const phoneDisplay = document.getElementById('profile-phone');
         const accountDisplay = document.getElementById('profile-account');
 
-        if (nameDisplay) nameDisplay.textContent = user.name || '';
+        if (nameDisplay) nameDisplay.textContent = user.fullName || '';
         if (emailDisplay) emailDisplay.textContent = user.email || '';
         if (phoneDisplay) phoneDisplay.textContent = user.phone || '';
         if (accountDisplay) accountDisplay.textContent = user.accountNumber || '';
@@ -174,7 +174,7 @@ function updateProfileInfo() {
         const emailInput = document.getElementById('edit-email');
         const phoneInput = document.getElementById('edit-phone');
 
-        if (nameInput) nameInput.value = user.name || '';
+        if (nameInput) nameInput.value = user.fullName || '';
         if (emailInput) emailInput.value = user.email || '';
         if (phoneInput) phoneInput.value = user.phone || '';
     }
@@ -186,7 +186,7 @@ function editProfileField(field) {
     if (!currentUser) return;
 
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const userIndex = users.findIndex(u => u.name === currentUser);
+    const userIndex = users.findIndex(u => u.fullName === currentUser);
 
     if (userIndex === -1) return;
 
@@ -217,7 +217,7 @@ function saveProfileField(field, value) {
     if (!currentUser) return;
 
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const userIndex = users.findIndex(u => u.name === currentUser);
+    const userIndex = users.findIndex(u => u.fullName === currentUser);
 
     if (userIndex === -1) return;
 
@@ -863,56 +863,42 @@ function handleChangePassword(event) {
 function handleSignup(event) {
     event.preventDefault();
     
-    const name = document.getElementById('signup-name').value;
+    const fullName = document.getElementById('signup-name').value;
     const email = document.getElementById('signup-email').value;
     const phone = document.getElementById('signup-phone').value;
     const password = document.getElementById('signup-password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-    // التحقق من تطابق كلمات المرور
+    // التحقق من تطابق كلمتي المرور
     if (password !== confirmPassword) {
-        showToast('كلمات المرور غير متطابقة', 'error');
+        showToast('كلمتا المرور غير متطابقتين', 'error');
         return;
     }
 
-    // التحقق من طول كلمة المرور
-    if (password.length < 6) {
-        showToast('يجب أن تكون كلمة المرور 6 أحرف على الأقل', 'error');
+    // التحقق من أن البريد الإلكتروني غير مستخدم مسبقاً
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    if (users.some(user => user.email === email)) {
+        showToast('البريد الإلكتروني مستخدم مسبقاً', 'error');
         return;
     }
 
-    // الحصول على قائمة المستخدمين الحالية
-    let users = JSON.parse(localStorage.getItem('users') || '[]');
-
-    // التحقق مما إذا كان المستخدم موجود بالفعل
-    if (users.some(user => user.name === name)) {
-        showToast('هذا المستخدم موجود بالفعل', 'error');
-        return;
-    }
-
-    // إنشاء مستخدم جديد مع رقم حساب
+    // إضافة المستخدم الجديد
     const newUser = {
-        name: name,
-        email: email,
-        phone: phone,
-        password: password,
-        accountNumber: generateAccountNumber()
+        fullName,
+        email,
+        phone,
+        password
     };
-    
     users.push(newUser);
-
-    // حفظ قائمة المستخدمين المحدثة
     localStorage.setItem('users', JSON.stringify(users));
-    localStorage.setItem('currentUser', name);
-    localStorage.setItem('isLoggedIn', 'true');
 
-    // إعادة تعيين النموذج
-    event.target.reset();
-    
-    // تحديث حالة المصادقة
+    // تسجيل الدخول تلقائياً
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+
+    // إظهار رسالة نجاح وتحديث الواجهة
+    showToast('تم إنشاء الحساب بنجاح!', 'success');
     checkAuthState();
-    updateProfileInfo();
-    showToast('تم إنشاء الحساب بنجاح', 'success');
 }
 
 // معالجة نموذج تسجيل الدخول
@@ -921,18 +907,21 @@ function handleLogin(event) {
     
     const fullName = document.getElementById('login-name').value;
     const password = document.getElementById('login-password').value;
+    
+    // التحقق من بيانات المستخدم
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find(u => u.fullName === fullName && u.password === password);
 
-    // هنا يمكنك إضافة التحقق من صحة البيانات
-    if (fullName && password) {
-        // تعيين حالة تسجيل الدخول في localStorage
+    if (user) {
+        // تسجيل الدخول
         localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userFullName', fullName);
+        localStorage.setItem('currentUser', JSON.stringify(user));
         
         // تحديث حالة المصادقة وإظهار المحتوى الرئيسي
         checkAuthState();
         showToast('تم تسجيل الدخول بنجاح!', 'success');
     } else {
-        showToast('الرجاء إدخال جميع البيانات المطلوبة', 'error');
+        showToast('اسم المستخدم أو كلمة المرور غير صحيحة', 'error');
     }
 }
 
@@ -1221,3 +1210,4 @@ function handleRussianBankForm(event) {
         showToast('الرجاء تعبئة جميع الحقول المطلوبة وتحميل الصورة', 'error');
     }
 }
+
