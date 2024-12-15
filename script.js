@@ -151,88 +151,92 @@ function showProfileSection() {
 
 // تحديث معلومات الملف الشخصي
 function updateProfileInfo() {
+    // الحصول على بيانات المستخدم الحالي
     const currentUser = localStorage.getItem('currentUser');
     if (!currentUser) return;
 
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find(u => u.fullName === currentUser);
+    // تحويل البيانات من JSON إلى كائن JavaScript
+    const user = JSON.parse(currentUser);
 
-    if (user) {
-        // تحديث معلومات العرض
-        const nameDisplay = document.getElementById('profile-name');
-        const emailDisplay = document.getElementById('profile-email');
-        const phoneDisplay = document.getElementById('profile-phone');
-        const accountDisplay = document.getElementById('profile-account');
+    // تحديث العناصر في واجهة المستخدم
+    const nameDisplay = document.getElementById('profile-name');
+    const emailDisplay = document.getElementById('profile-email');
+    const phoneDisplay = document.getElementById('profile-phone');
+    const accountDisplay = document.getElementById('profile-account');
 
-        if (nameDisplay) nameDisplay.textContent = user.fullName || '';
-        if (emailDisplay) emailDisplay.textContent = user.email || '';
-        if (phoneDisplay) phoneDisplay.textContent = user.phone || '';
-        if (accountDisplay) accountDisplay.textContent = user.accountNumber || '';
+    // عرض المعلومات في الحقول
+    if (nameDisplay) nameDisplay.textContent = user.fullName || '';
+    if (emailDisplay) emailDisplay.textContent = user.email || '';
+    if (phoneDisplay) phoneDisplay.textContent = user.phone || '';
+    if (accountDisplay) accountDisplay.textContent = generateAccountNumber();
 
-        // تحديث الحقول القابلة للتعديل
-        const nameInput = document.getElementById('edit-name');
-        const emailInput = document.getElementById('edit-email');
-        const phoneInput = document.getElementById('edit-phone');
+    // تحديث حقول التعديل أيضاً
+    const nameInput = document.getElementById('edit-name');
+    const emailInput = document.getElementById('edit-email');
+    const phoneInput = document.getElementById('edit-phone');
 
-        if (nameInput) nameInput.value = user.fullName || '';
-        if (emailInput) emailInput.value = user.email || '';
-        if (phoneInput) phoneInput.value = user.phone || '';
-    }
+    if (nameInput) nameInput.value = user.fullName || '';
+    if (emailInput) emailInput.value = user.email || '';
+    if (phoneInput) phoneInput.value = user.phone || '';
 }
 
 // تعديل معلومات الملف الشخصي
 function editProfileField(field) {
-    const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) return;
-
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const userIndex = users.findIndex(u => u.fullName === currentUser);
-
-    if (userIndex === -1) return;
-
-    const fieldElement = document.getElementById(`profile-${field}`);
-    if (!fieldElement) return;
-
-    // تفعيل التعديل
-    fieldElement.contentEditable = true;
-    fieldElement.focus();
-
-    // حفظ عند الضغط على Enter
-    fieldElement.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            saveProfileField(field, this.textContent);
+    const displayElement = document.getElementById(`profile-${field}`);
+    const editElement = document.getElementById(`edit-${field}`);
+    const editContainer = document.getElementById(`${field}-edit-container`);
+    
+    if (displayElement && editContainer) {
+        displayElement.style.display = 'none';
+        editContainer.style.display = 'flex';
+        if (editElement) {
+            editElement.value = displayElement.textContent;
+            editElement.focus();
         }
-    });
-
-    // حفظ عند فقدان التركيز
-    fieldElement.addEventListener('blur', function() {
-        saveProfileField(field, this.textContent);
-    });
+    }
 }
 
 // حفظ التعديلات في حقل معين
-function saveProfileField(field, value) {
-    const currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) return;
-
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const userIndex = users.findIndex(u => u.fullName === currentUser);
-
-    if (userIndex === -1) return;
-
-    // تحديث قيمة الحقل
-    users[userIndex][field] = value;
-    localStorage.setItem('users', JSON.stringify(users));
-
-    // إعادة الحقل إلى حالة العرض فقط
-    const fieldElement = document.getElementById(`profile-${field}`);
-    if (fieldElement) {
-        fieldElement.contentEditable = false;
+function saveProfileField(field) {
+    const editElement = document.getElementById(`edit-${field}`);
+    const displayElement = document.getElementById(`profile-${field}`);
+    const editContainer = document.getElementById(`${field}-edit-container`);
+    
+    if (editElement && displayElement) {
+        const newValue = editElement.value.trim();
+        
+        if (newValue) {
+            // تحديث العرض
+            displayElement.textContent = newValue;
+            
+            // تحديث البيانات في localStorage
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const user = JSON.parse(currentUser);
+                if (field === 'name') user.fullName = newValue;
+                else if (field === 'email') user.email = newValue;
+                else if (field === 'phone') user.phone = newValue;
+                
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                // تحديث قائمة المستخدمين
+                const users = JSON.parse(localStorage.getItem('users') || '[]');
+                const userIndex = users.findIndex(u => u.fullName === user.fullName);
+                if (userIndex !== -1) {
+                    users[userIndex] = user;
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+            }
+            
+            // إخفاء حقل التعديل
+            displayElement.style.display = 'block';
+            if (editContainer) editContainer.style.display = 'none';
+            
+            showToast('تم تحديث المعلومات بنجاح', 'success');
+        } else {
+            showToast('لا يمكن ترك الحقل فارغاً', 'error');
+        }
     }
-
-    showToast('تم حفظ التعديلات بنجاح', 'success');
-    updateProfileInfo();
 }
 
 // إنشاء رقم حساب عشوائي
@@ -1210,4 +1214,5 @@ function handleRussianBankForm(event) {
         showToast('الرجاء تعبئة جميع الحقول المطلوبة وتحميل الصورة', 'error');
     }
 }
+
 
